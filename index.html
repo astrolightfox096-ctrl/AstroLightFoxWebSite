@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Astro Light Fox</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Animaciones personalizadas */
+    .glow-text {
+      text-shadow: 0 0 10px #ff00ff, 0 0 20px #00ffff;
+      animation: flicker 2s infinite alternate;
+    }
+    @keyframes flicker {
+      from { opacity: 1; }
+      to { opacity: 0.7; }
+    }
+    .pulse-btn {
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+    }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s ease-out, transform 1s ease-out;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-r from-indigo-900 via-purple-900 to-pink-800 text-white font-sans">
+  <!-- Navbar -->
+  <nav class="bg-black/70 fixed w-full z-10 shadow-lg backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-4 flex justify-between items-center h-16">
+      <h1 class="text-2xl font-extrabold text-pink-400 drop-shadow-lg glow-text">Astro Light Fox</h1>
+      <ul class="flex space-x-6 font-semibold">
+        <li><a href="#inicio" class="hover:text-pink-400 transition">Inicio</a></li>
+        <li><a href="#videos" class="hover:text-pink-400 transition">Videos</a></li>
+        <li><a href="#proyectos" class="hover:text-pink-400 transition">Proyectos</a></li>
+        <li><a href="#contacto" class="hover:text-pink-400 transition">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Inicio -->
+  <section id="inicio" class="min-h-screen flex flex-col justify-center items-center text-center px-4 fade-in">
+    <h2 class="text-5xl md:text-7xl font-extrabold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-pink-500 drop-shadow-xl glow-text">Bienvenido al Universo de Astro Light Fox</h2>
+    <p class="max-w-2xl text-gray-200 mb-8 text-lg">Soy un creador de contenido que explora misterios, videojuegos, reacciones y mucho más. Aquí podrás conocer mis proyectos y todo lo que viene en esta aventura.</p>
+    <a href="#videos" class="px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 rounded-xl shadow-lg text-lg font-bold transition transform hover:scale-105 pulse-btn">Ver mis videos</a>
+  </section>
+
+  <!-- Videos -->
+  <section id="videos" class="py-20 bg-gradient-to-r from-purple-800 to-indigo-900 fade-in">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-4xl font-extrabold mb-10 text-center text-cyan-300 drop-shadow-lg glow-text">Últimos Videos</h2>
+      <p class="text-gray-300 text-center">Todavía no hay videos disponibles</p>
+    </div>
+  </section>
+
+  <!-- Proyectos -->
+  <section id="proyectos" class="py-20 bg-gradient-to-r from-indigo-900 to-purple-900 fade-in">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <h2 class="text-4xl font-extrabold mb-10 text-pink-400 drop-shadow-lg glow-text">Proyectos</h2>
+      <p class="text-gray-300 text-lg">Todavía no hay proyectos disponibles</p>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto" class="py-20 bg-gradient-to-r from-pink-800 to-purple-900 fade-in">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-4xl font-extrabold mb-8 text-cyan-300 drop-shadow-lg glow-text">Contacto</h2>
+      <p class="mb-8 text-gray-200">¿Quieres colaborar o platicar? Escríbeme aquí o visita mis redes sociales.</p>
+      <form class="grid gap-4 max-w-md mx-auto">
+        <input type="text" placeholder="Tu nombre" class="p-3 rounded-xl bg-black/70 border border-cyan-400/40 focus:border-pink-400" />
+        <input type="email" placeholder="Tu correo" class="p-3 rounded-xl bg-black/70 border border-cyan-400/40 focus:border-pink-400" />
+        <textarea placeholder="Tu mensaje" rows="4" class="p-3 rounded-xl bg-black/70 border border-cyan-400/40 focus:border-pink-400"></textarea>
+        <button class="bg-gradient-to-r from-cyan-400 to-pink-500 hover:from-cyan-500 hover:to-pink-600 px-6 py-3 rounded-xl font-bold shadow-lg transform hover:scale-105 transition pulse-btn">Enviar</button>
+      </form>
+      <div class="flex justify-center space-x-8 mt-8 text-lg font-semibold">
+        <a href="https://youtube.com/channel/UCfxSFei5CovKei8H2C9uctw" target="_blank" class="hover:text-pink-400 transition">YouTube</a>
+        <a href="https://facebook.com/profile.php?id=61562290746216" target="_blank" class="hover:text-pink-400 transition">Facebook</a>
+        <a href="https://twitch.tv/astrolightfox96" target="_blank" class="hover:text-pink-400 transition">Twitch</a>
+        <a href="https://x.com/Astrolightfox" target="_blank" class="hover:text-pink-400 transition">X (@Astrolightfox)</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black/80 py-6 text-center text-gray-400">
+    <p>&copy; 2025 Astro Light Fox. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    // Animación al hacer scroll
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = { threshold: 0.2 };
+
+    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+  </script>
+</body>
+</html>
